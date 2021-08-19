@@ -9,8 +9,11 @@ const scores = document.getElementById('sc');
 const hscore = document.getElementById('hs');
 
 var last = localStorage.getItem("highscore");
+if(last != NaN && last != null){
 integer = parseInt(last);
-hscore.innerHTML=integer;
+hscore.innerHTML=integer;}
+if(last == NaN)
+hscore.innerHTML = 0;
 
 function runner(){
 if (start == 0) {
@@ -43,6 +46,9 @@ setInterval( increment, 200);
 
 var last = localStorage.getItem("highscore");
 integer = parseInt(last);
+if(last == NaN || last == null)
+hscore.innerHTML = 0;
+else
 hscore.innerHTML=integer;
 }
 }
